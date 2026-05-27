@@ -23,6 +23,8 @@ pipeline {
                }
             }
         }
+
+    }
         stage('Install Dependencies') {
             steps {
                script{ 
@@ -87,6 +89,5 @@ pipeline {
             echo 'I will run when pipeline is success'
         }
     }
-}
 
 }
