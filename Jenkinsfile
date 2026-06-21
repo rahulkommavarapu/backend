@@ -4,7 +4,7 @@ pipeline {
         PROJECT = 'expense'
         COMPONENT = 'backend'
         appVersion = ''
-        ACC_ID  = '631164543894'
+        ACC_ID  = '377426330809'
     }
     options {
         disableConcurrentBuilds()
