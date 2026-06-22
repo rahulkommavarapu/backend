@@ -70,8 +70,8 @@ pipeline {
             when { 
                 expression { params.deploy }
             }
-            steps{
-                build job: 'backend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true
+            steps {
+                build job: 'backend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true ,propagate: false
             }
         }
     }
@@ -88,6 +88,7 @@ pipeline {
         }
     }
 }
+
 
 
 
