@@ -50,7 +50,7 @@ pipeline {
               }
             }
         } */
-        stage('Docker Build') {
+        stage ('Docker Build') {
             steps {
                script{
                 withAWS(region: 'us-east-1', credentials: 'aws-creds') {
@@ -66,12 +66,12 @@ pipeline {
                }
             }
         }
-        stage('Trigger Deploy'){
+        stage ('Trigger Deploy'){
             when { 
                 expression { params.deploy }
             }
             steps {
-                build job: 'backend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true 
+              build job: 'backend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true 
             }
         }
     }
